@@ -1,17 +1,22 @@
-const http = require("http");
 
-const server = http.createServer((req,res)=>{
-    if(req.url === "/"){
-        res.end("welcome to the homepage");
-    }
-    else if(req.url === "/about"){
-        res.end("Welcome to about page");
-    }
-     res.end(`
-    <h1>Oops!</h1>
-  <p>We can't seem to find the page you are looking for</p>
-  <a href="/">back home</a>
-    `)
+// get back the class
+// if want custom extend from class
+// otherwise just for emitting and handling events create instance
+const EventEmitter = require('events')
+
+const customEmitter = new EventEmitter()
+
+// on and emit methods
+// keep track of the order
+// additional arguments
+// built-in modules utilize it
+
+customEmitter.on('response', (name, id) => {
+  console.log(`data recieved user ${name} with id:${id}`)
 })
 
-server.listen(5000);
+customEmitter.on('response', () => {
+  console.log('some other logic here')
+})
+
+customEmitter.emit('response', 'john', 34)
