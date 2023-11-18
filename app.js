@@ -1,11 +1,7 @@
-const os = require('os');
-const user = os.userInfo();
-// console.log(user);
+const fs = require("fs");
 
-const  currentUser = {
-    name:os.type(),
-    release:os.release(),
-    freememory:os.freemem(),
-    totalMemory: os.totalmem()
-}
-console.log(currentUser);
+const first = fs.readFileSync("./content/first.txt","utf8");
+const second = fs.readFileSync("./content/second.txt","utf8");
+console.log(first);
+console.log(second);
+fs.writeFileSync("./content/result-sync.txt",`${first} ${second}`);
