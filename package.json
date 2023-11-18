@@ -1,5 +1,28 @@
 {
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "1-intro.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node app.js",
+    "dev":"nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Viateur-akimana/Anima-figma-project.git"
+  },
+  "keywords": [],
+  "author": "Viateur",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Viateur-akimana/Anima-figma-project/issues"
+  },
+  "homepage": "https://github.com/Viateur-akimana/Anima-figma-project#readme",
   "dependencies": {
-    "node": "^21.1.0"
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
   }
 }
