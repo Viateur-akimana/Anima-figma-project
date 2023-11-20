@@ -1,22 +1,17 @@
-const http = require("http");
-
-const server  = http.createServer((req,res)=>{
-    const url = req.url;
-  if(url === '/'){
-res.writeHead(201,{"content-type":"text/html"});
-res.write('<h1> homepage </h1>');
-res.end();
-  }
-  else if(url === '/about'){
-    res.writeHead(201,{"content-type":"text/html"});
-res.write('<h1> About page</h1>');
-res.end();
-  }
-  else{
-    res.writeHead(201,{"content-type":"text/html"});
-    res.write('<h1> NOT FOUND PAGE </h1>');
-    res.end();
-  }
+const express = require("express");
+const {products} = require("./data");
+const app = express();
+app.get("/",(req,res)=>{
+  res.json(products);
 })
 
-server.listen(5000);
+app.get("/about",(req,res)=>{
+  res.status(200).send("You are welcome back on the about page ")
+})
+app.get("*",(req,res)=>{
+  res.status(404).send("Resource is not found");
+})
+
+app.listen(5000,(req,res)=>{
+  console.log("Server on running on port 5000...");
+})
