@@ -1,16 +1,11 @@
 const express = require('express');
 const app = express();
-
-const logger = (req,res,next) =>{
-  const method = req.method;
-  const url = req.url;
-  const date = req.date;
-console.log(method,url,date);
-}
-app.get("/",logger,(req,res)=>{
+const logger = require("./logger");
+app.use(logger);
+app.get("/",(req,res)=>{
   res.send("Home page");
 })
-app.get("/about",logger,(req,res)=>{
+app.get("/about",(req,res)=>{
   res.send("This about page")
 })
 
