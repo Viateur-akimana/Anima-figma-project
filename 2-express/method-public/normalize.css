@@ -8,7 +8,7 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
-html {
+ html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
 }
@@ -197,11 +197,7 @@ select {
 button,
 [type='button'],
 [type='reset'],
-[type='submit'] {
-  -webkit-appearance: button;
-  appearance: button; /* Also define the standard property 'appearance' for compatibility */
-}
-
+[type='submit'] 
 /**
  * Remove the inner border and padding in Firefox.
  */
@@ -281,36 +277,71 @@ textarea {
  */
 
 [type='number']::-webkit-inner-spin-button,
-[type='number']::-webkit-outer
-/* ... previous rules ... */
-
-/**
- * Add the correct font size in all browsers.
- */
-
-small {
-  font-size: 80%;
+[type='number']::-webkit-outer-spin-button {
+  height: auto;
 }
 
 /**
- * Prevent `sub` and `sup` elements from affecting the line height in
- * all browsers.
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
  */
 
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
+[type='search'] {
+  outline-offset: -2px; /* 2 */
 }
 
-sub {
-  bottom: -0.25em;
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+
+[type='search']::-webkit-search-decoration {
+  -webkit-appearance: none;
 }
 
-sup {
-  top: -0.5em;
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
 }
 
-/* ... remaining rules ... */
+/* Interactive
+   ========================================================================== */
+
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 10+.
+ */
+
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+
+[hidden] {
+  display: none;
+}
