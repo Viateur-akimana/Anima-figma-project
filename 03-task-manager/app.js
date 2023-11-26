@@ -4,11 +4,11 @@ const tasks = require("./routes/tasks");
 const connectedDb = require("./db/connect");
 require('dotenv').config();
 
-//registering middlewares
+//registering middlewars
 app.use("/api/v1/tasks",tasks)
 //basic route
 
-const port = 5500;
+const port = 3000;
 
 const start = async() =>{
     try {
