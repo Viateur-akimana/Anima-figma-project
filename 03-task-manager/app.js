@@ -11,12 +11,12 @@ app.use("/api/v1/tasks",tasks);
 app.use(notFound);
 //basic route
 
-const port = 3000;
+const PORT = 5200;
 
 const start = async() =>{
     try {
         await connectedDb(process.env.MONGO_URI)
-        app.listen(port,(req,res)=>{
+        app.listen(PORT,(req,res)=>{
     console.log("The server is running on port 5500..");
 })
     } catch (error) {
